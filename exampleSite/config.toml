@@ -16,6 +16,7 @@ summaryLength = 0
   name = "Sid Verma"
 
 [params]
+  mainSections = ["post", "photos"]
   email = "email@example.com"
   smart_email_link = ["Email"]
   favicon = "/icon/favicon.jpg"
