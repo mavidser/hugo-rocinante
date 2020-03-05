@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  {{- partial "head.html" . -}}
+  <body>
+    <header>
+      {{- partial "header.html" . -}}
+    </header>
+    <main>
+      {{- block "main" . }}{{- end }}
+    </main>
+    <footer>
+      {{- partial "footer.html" . -}}
+    </footer>
+    {{ $js := resources.Get "js/rocinante.js" | resources.Minify }}
+    <script>
+      const emailId = atob({{.Param "email" | base64Encode}});
+    </script>
+    <script src="{{ $js.RelPermalink }}"></script>
+  </body>
+</html>

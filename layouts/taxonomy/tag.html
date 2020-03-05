@@ -1,0 +1,11 @@
+{{ define "main" }}
+    <div class="combined-title-pagination">
+      <h1><a href="{{ ($.Site.GetPage "/tags").RelPermalink }}">Tags</a> / {{ .Title }}</h1>
+      {{ if ne .Paginator.PageNumber 1 }}
+          <h3 class="current-page">Page {{.Paginator.PageNumber}}</h3>
+      {{ end }}
+    </div>
+    <hr>
+    {{- partial "listcontent.html" . -}}
+    {{- partial "pagination.html" . -}}
+{{ end }}

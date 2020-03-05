@@ -1,0 +1,23 @@
+{{ define "main" }}
+
+    <div class="post">
+        <div class="title-group">
+            <div class="title">
+                <h1>{{ .Title }}</h1>
+            </div>
+            <div class="date"><h5>{{ .Params.date.Format "Jan 02, 2006" }}</h5></div>
+        </div>
+        <article class="content">
+            {{ .Content }}
+        </article>
+        {{ with .Params.tags }}
+            <div class="tags">
+                <span title="Tags">🏷</span>
+                <div class="horizontal-links links">
+                    {{ range . }}{{ with $.Site.GetPage (printf "/tags/%s" ( . | urlize)) }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}{{ end }}
+                </div>
+            </div>
+        {{ end }}
+    </article>
+
+{{ end }}

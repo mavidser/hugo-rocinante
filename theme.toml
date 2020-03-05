@@ -1,0 +1,12 @@
+name = "Rocinante"
+license = "MIT"
+licenselink = "https://github.com/mavidser/hugo-rocinante/blob/master/LICENSE"
+description = "Minimal Hugo theme"
+homepage = "https://github.com/mavidser/hugo-rocinante/"
+tags = ["blog", "minimal", "simple", "clean", "gallery"]
+features = ["blog", "gallery"]
+min_version = "0.41"
+
+[author]
+  name = "Sid Verma"
+  homepage = "sidverma.io"

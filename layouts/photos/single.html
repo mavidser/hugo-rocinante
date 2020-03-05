@@ -1,0 +1,44 @@
+{{ define "main" }}
+    <div class="album">
+        <div class="title-group">
+            <div class="title">
+                <h1>{{ .Title }}</h1>
+            </div>
+                <div class="date"><h5>{{ .Params.display_date }}</h5></div><div class="location"><h5>{{ .Params.location }}</h5></div>
+            <!-- {{ if .Params.display_date }}
+            {{ end }}
+            {{ if .Params.location }}
+            {{ end }} -->
+        </div>
+        <article class="content">
+            {{ .Content }}
+            <div class="photos">
+                {{ range .Resources }}
+                    {{ if in .Name "Pano" }}
+                    {{ $image := .Resize "700x q100" }}
+                    <a href="{{.RelPermalink}}"  class="full-size">
+                        <img src="{{$image.RelPermalink}}" alt="">
+                    </a>
+                    {{ else }}
+                    {{ $image := .Resize "350x q100" }}
+                    <a href="{{.RelPermalink}}">
+                        <img src="{{$image.RelPermalink}}" alt="">
+                    </a>
+                    {{ end }}
+                {{ end }}
+            </div>
+            <p>
+                <em>{{ .Params.footer }}</em>
+            </p>
+        </article>
+        {{ with .Params.tags }}
+            <div class="tags">
+                <span title="Tags">🏷</span>
+                <div class="horizontal-links links">
+                    {{ range . }}{{ with $.Site.GetPage (printf "/tags/%s" ( . | urlize)) }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}{{ end }}
+                </div>
+            </div>
+        {{ end }}
+    </article>
+
+{{ end }}
