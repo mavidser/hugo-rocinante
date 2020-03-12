@@ -300,7 +300,7 @@ footer {
   .photos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1em 2%;
+    gap: 0.7em 0.7em;
     a {
       display: grid;
     }
@@ -311,13 +311,15 @@ footer {
   }
 }
 
-@media (max-width:350px) {
-  main {
+@media (max-width:400px) {
+  body {
     font-size: 14px;
   }
-}
-@media (max-width:400px) {
   .album .photos {
     grid-template-columns: 1fr;
+    a {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
   }
 }
