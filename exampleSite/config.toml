@@ -18,7 +18,6 @@ summaryLength = 0
 [params]
   mainSections = ["post", "photos"]
   email = "email@example.com"
-  smart_email_link = ["Email"]
   favicon = "/icon/favicon.jpg"
   about = """
 Hi. I'm **Don**. Some people also know me as Alonso Quixano.
