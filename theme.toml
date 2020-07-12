@@ -5,7 +5,7 @@ description = "Minimal Hugo theme"
 homepage = "https://github.com/mavidser/hugo-rocinante/"
 tags = ["blog", "minimal", "simple", "clean", "gallery"]
 features = ["blog", "gallery"]
-min_version = "0.41"
+min_version = "0.66"
 
 [author]
   name = "Sid Verma"
