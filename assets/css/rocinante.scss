@@ -111,6 +111,10 @@ img, video {
   height: auto;
   border-radius: 3px;
 }
+a > img:hover {
+  opacity: 0.75;
+  transition: 0.25s;
+}
 figure {
   width: 100%;
   margin: 2em 0;
