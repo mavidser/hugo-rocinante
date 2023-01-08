@@ -1,10 +1,10 @@
 # Rocinante theme for Hugo
 
-Rocinante is a minimal and lightweight theme for hugo. [Here][1] are some opinions used in building a theme. In short, extremely minimal footprint (under 5kB) with good contrast for accessibility.
+Rocinante is a minimal and lightweight theme for hugo. It has minimal non-essential components, and supports normal blog posts and photoblogs. 
+
+[Here][1] are some opinions used in building a theme. In short, extremely minimal footprint (under 5kB) with good contrast for accessibility.
 
 ######  [Demo link](https://sidverma.io/hugo-rocinante/)
-
-Rocinante is a simple responsive blog theme with minimal non-essential components. It supports normal blog posts and photoblogs.
 
 ![Rocinante Screenshot 1](https://raw.githubusercontent.com/mavidser/hugo-rocinante/master/images/tn.png)
 
@@ -17,6 +17,7 @@ Rocinante is a simple responsive blog theme with minimal non-essential component
 - Mobile support
 - RSS Feeds
 - No essential Javascript
+- Custom CSS support
 
 The only javascript in the theme is for an optional enhancement to Email link, where it shows the email ID upon clicking such links. See the demo on the 'Email' link on [the demo website](https://sidverma.io/hugo-rocinante/). If javascript is disabled, it works as a normal link.
 
