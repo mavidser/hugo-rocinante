@@ -7,6 +7,13 @@
 {{ $style := resources.Get "css/rocinante.scss" | resources.ToCSS $options  }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
+{{- if isset .Site.Params "customcss" }}
+    {{ range .Site.Params.customCSS }}
+    {{ $customstyle := resources.Get . | fingerprint }}
+    <link rel="stylesheet" type="text/css" href="{{ $customstyle.Permalink }}">
+    {{ end }}
+{{- end -}}
+
 {{ with .Site.Params.favicon }}
 <link rel="shortcut icon" href="{{ . }}">
 {{ end }}

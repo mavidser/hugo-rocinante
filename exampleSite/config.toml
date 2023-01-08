@@ -18,7 +18,7 @@ summaryLength = 0
 [params]
   mainSections = ["post", "photos"]
   email = "email@example.com"
-  favicon = "/icon/favicon.jpg"
+  favicon = "icon/favicon.jpg"
   about = """
 Hi. I'm **Don**. Some people also know me as Alonso Quixano.
 
