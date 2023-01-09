@@ -6,6 +6,7 @@ homepage = "https://github.com/mavidser/hugo-rocinante/"
 tags = ["blog", "minimal", "simple", "clean", "gallery"]
 features = ["blog", "gallery"]
 min_version = "0.66"
+demosite = "https://sidverma.io/hugo-rocinante/"
 
 [author]
   name = "Sid Verma"
