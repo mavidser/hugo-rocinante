@@ -1,0 +1,22 @@
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background-color: #222;
+    color: white;
+    .post-list h1 a,
+    .post-list h1 a:hover {
+      color: white;
+    }
+    a {
+      color: #aaa;
+      &:hover {
+        color: #888;
+        text-decoration: underline;
+      }
+    }
+    footer .content-container {
+      background: #333;
+    }
+  }
+
+}
