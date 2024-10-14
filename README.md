@@ -70,8 +70,6 @@ theme = "rocinante"
 paginate = 3
 
 [markup]
-  [markup.highlight]
-    style = "monokailight"
   [markup.goldmark.renderer]
     unsafe= true
 
