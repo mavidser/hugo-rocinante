@@ -1,4 +1,5 @@
 {{ range .Paginator.Pages }}
+{{ if not .Params.hidden }}
 <article class="post-list">
     <div class="title-group">
         <div class="title">
@@ -35,4 +36,5 @@
     {{ end }}
 
 </article>
+{{ end }}
 {{ end }}

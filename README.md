@@ -1,6 +1,6 @@
 # Rocinante theme for Hugo
 
-Rocinante is a minimal and lightweight theme for hugo. It has minimal non-essential components, and supports normal blog posts and photoblogs. 
+Rocinante is a minimal and lightweight theme for hugo. It has minimal non-essential components, and supports normal blog posts and photoblogs.
 
 [Here][1] are some opinions used in building a theme. In short, extremely minimal footprint (under 5kB) with good contrast for accessibility.
 
@@ -43,7 +43,7 @@ Put these in the `params` section of config.toml
   - href - String containing URL of the link
   - new_tab = Boolean, to open link in a new tab
   - smart_email_link = Boolean. If true, a javascript snippet is included which changed link behavior. Text will change to the content of `email` param upon clicking once, after which it follows a `mailto:` link to the same. See example on the Email link in the about section of the demo page.
-  
+
   Example:
   ```toml
   [[params.links]]
@@ -118,6 +118,16 @@ In order to see your site in action, run Hugo's built-in local server.
 `$ hugo server`
 
 Now enter [`localhost:1313`](http://localhost:1313/) in the address bar of your browser.
+
+## Post configurations:
+
+### Hidden posts:
+
+To hide a post from appearing in the homepage or any other list of posts, add the following to the front matter of the post:
+
+```toml
+hidden: true
+```
 
 ## License
 
