@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html>
+{{ if eq .Site.Params.colorScheme "dark" }}
+  <html data-color-scheme="dark">
+{{ else if eq .Site.Params.colorScheme "auto" }}
+  <html data-color-scheme="auto">
+{{ else }}
+  <html data-color-scheme="light">
+{{ end }}
   {{- partial "head.html" . -}}
   <body>
     <header>

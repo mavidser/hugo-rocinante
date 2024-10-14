@@ -3,9 +3,20 @@
 /* https://markdotto.com/2018/02/07/github-system-fonts/ */
 $fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
+@import 'rocinante-light';
+
+{{ if eq .Site.Params.colorScheme "dark" }}
+  @import 'rocinante-dark';
+{{ else if eq .Site.Params.colorScheme "auto" }}
+  @media (prefers-color-scheme: dark) {
+    @import 'rocinante-dark';
+  }
+{{ end }}
+
 body {
+  background-color: var(--background-color);
   font-family: $fonts;
-  color: #333;
+  color: var(--text-color);
   font-size: 16px;
   line-height: 1.6;
 }
@@ -54,11 +65,11 @@ h4, h5, h6 {
 }
 
 a {
-  color: #2200CC;
+  color: var(--link-color);
   transition: color 0.1s ease;
 
   &:hover {
-    color: #5544FF;
+    color: var(--link-hover-color);
   }
 }
 
@@ -84,7 +95,7 @@ dd {
 hr {
   margin: 2em 0;
   border: 0;
-  border-top: 2px dotted #aaa;
+  border-top: 2px dotted var(--horizontal-link-border);
 }
 
 pre, code {
@@ -92,13 +103,13 @@ pre, code {
   border-radius: 3px;
 }
 code {
-  background: #f9f9f9;
+  background: var(--code-background);
   font-size: 0.9em;
   padding: 0.25em 0.5em;
-  color: #9E525A;
+  color: var(--code-color);
 }
 pre code {
-  background: #f9f9f9;
+  background: var(--code-background);
   display: block;
   margin: 1em 0;
   padding: 0.75em 1em;
@@ -126,26 +137,26 @@ figcaption {
   }
   text-align: center;
   font-size: 0.9em;
-  color: #666;
+  color: var(--figcaption-color);
 }
 
 blockquote {
   padding-left: 1.25em;
   padding-right: 1.5em;
-  border-left: .25em solid #eee;
-  color: #666;
+  border-left: .25em solid var(--blockquote-border);
+  color: var(--blockquote-color);
 }
 
 table {
   margin-bottom: 1em;
   width: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid var(--table-border);
 }
 
 td, th {
   vertical-align: middle;
   padding: .25rem .5rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--table-border);
 }
 
 th {
@@ -153,7 +164,7 @@ th {
 }
 
 tbody tr:nth-child(2n+1) td, tbody tr:nth-child(2n+1) th {
-  background-color: #f8f8f8;
+  background-color: var(--table-alt-background);
 }
 
 sup, sub {
@@ -174,14 +185,14 @@ header h2 {
   a {
     text-decoration: none;
     border: none;
-    color: #77f !important;
+    color: var(--header-link-color) !important;
 
     &:hover {
-      color: #f77 !important;
+      color: var(--header-link-hover) !important;
     }
 
     &:active {
-      color: #2a2 !important;
+      color: var(--header-link-active) !important;
     }
   }
 }
@@ -203,10 +214,11 @@ header h2 {
 
 .title-group {
   .title h1 {
+    color: var(--title-color);
     margin-bottom: 0.5em;
   }
   .date h5 {
-    color: #888;
+    color: var(--date-color);
     margin: 0;
   }
   margin-bottom: 1.5em;
@@ -215,7 +227,7 @@ header h2 {
 footer {
   margin-top: 3em;
   .content-container {
-    background: #eee;
+    background: var(--footer-background);
     padding: 2em 0;
     .content {
       max-width: 740px;
@@ -230,7 +242,7 @@ footer {
   margin-top: 0;
   margin-bottom: 0.25em;
   a {
-    border-right: 2px solid #ccc;
+    border-right: 2px solid var(--horizontal-link-border);
     padding-right: 0.5em;
     margin-right: 0.5em;
   }
@@ -244,12 +256,12 @@ footer {
 
 .post-list {
   h1 a {
-    color: #333;
+    color: var(--title-color);
     text-decoration: none;
     border: none;
 
     &:hover {
-      color: #5544FF;
+      color: var(--post-list-hover);
     }
   }
   .read-more {
@@ -257,7 +269,7 @@ footer {
   }
 
   padding-bottom: 1em;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--horizontal-link-border);
 }
 
 .tags {
@@ -266,11 +278,11 @@ footer {
     display: inline;
     margin-left: 0.5em;
     a {
-      color: #aaa;
+      color: var(--tag-link-color);
       text-decoration: none;
       border-bottom: none;
       &:hover {
-        color: #888;
+        color: var(--tag-link-hover);
         text-decoration: underline;
       }
     }
@@ -280,7 +292,7 @@ footer {
 .paginator {
   margin: 2em 0;
   .disabled {
-    color: #aaa;
+    color: var(--paginator-disabled);
   }
   .newer {
     float: right;
@@ -289,7 +301,7 @@ footer {
 }
 
 .current-page {
-  color: #aaa;
+  color: var(--current-page-color);
 }
 
 .album {
@@ -297,8 +309,8 @@ footer {
     display: inline;
   }
   .location {
-    color: #888;
-    border-left: solid 2px #ccc;
+    color: var(--location-color);
+    border-left: solid 2px var(--location-border);
     padding-left: 1em;
     margin-left: 1em;
   }

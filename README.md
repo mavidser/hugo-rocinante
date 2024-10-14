@@ -76,6 +76,7 @@ paginate = 3
     unsafe= true
 
 [params]
+  colorScheme = "light" # "light" or "dark" or "auto". Defaults to light.
   mainSections = ["posts", "photos"]
   email = "mail@example.com"
   favicon = "icons/favicon.png"
