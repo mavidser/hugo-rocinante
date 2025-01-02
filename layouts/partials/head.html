@@ -4,8 +4,8 @@
 <title>{{ if ne .Title .Site.Title }}{{ .Title }} · {{ end }}{{ .Site.Title }}</title>
 
 {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true) }}
-<!-- {{ $style := resources.Get "css/rocinante.scss" | resources.ToCSS $options  }} -->
-{{ $style := resources.Get "css/rocinante.scss" | resources.ExecuteAsTemplate "css/rocinante.scss" . | resources.ToCSS $options | resources.Minify }}
+<!-- {{ $style := resources.Get "css/rocinante.scss" | css.Sass $options  }} -->
+{{ $style := resources.Get "css/rocinante.scss" | resources.ExecuteAsTemplate "css/rocinante.scss" . | css.Sass $options | resources.Minify }}
 
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
