@@ -25,7 +25,9 @@ The only javascript in the theme is for an optional enhancement to Email link, w
 
 Inside the folder of your Hugo site run:
 
-    $ git submodule add https://github.com/mavidser/hugo-rocinante.git themes/rocinante
+```
+git submodule add https://github.com/mavidser/hugo-rocinante.git themes/rocinante
+```
 
 For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
 
@@ -114,7 +116,9 @@ About section. Enter details about you here.
 
 In order to see your site in action, run Hugo's built-in local server.
 
-`$ hugo server`
+```
+hugo server
+```
 
 Now enter [`localhost:1313`](http://localhost:1313/) in the address bar of your browser.
 
